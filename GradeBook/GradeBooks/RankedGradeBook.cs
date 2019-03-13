@@ -1,6 +1,7 @@
 ﻿using GradeBook.Enums;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace GradeBook.GradeBooks
@@ -19,40 +20,41 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work.");
 
             var thershold = (int)Math.Ceiling(Students.Count * 0.2);
+           // var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList.
             List<double> averageGrades = new List<double>();
             foreach (Student student in Students)
             { 
                 averageGrades.Add(student.AverageGrade);
             } 
-            double[] arrayAverageGrades = averageGrades.ToArray();
+            
             
             double numb;
             for (int i = 0; i <= Students.Count; i++)
             {
                 for (int j = 0; j <= Students.Count - 1; j++)
                 {
-                    if (arrayAverageGrades[j] < arrayAverageGrades[j + 1])
+                    if (averageGrades[j] < averageGrades[j + 1])
                     {
-                        numb = arrayAverageGrades[j];
-                        arrayAverageGrades[j] = arrayAverageGrades[j + 1]; 
-                        arrayAverageGrades[j + 1] = numb;
+                        numb = averageGrades[j];
+                        averageGrades[j] = averageGrades[j + 1]; 
+                        averageGrades[j + 1] = numb;
 
                     }
                 } 
             }
-            if (averageGrade >= arrayAverageGrades[thershold - 1])
+            if (averageGrade >= averageGrades[thershold - 1])
             {
                 return 'A';
             }
-            else if (averageGrade >= arrayAverageGrades[(thershold*2) - 1])
+            else if (averageGrade >= averageGrades[(thershold*2) - 1])
             {
                 return 'B';
             }
-            else if (averageGrade >= arrayAverageGrades[(thershold*3) - 1])
+            else if (averageGrade >= averageGrades[(thershold*3) - 1])
             {
                 return 'C';
             }
-            else if (averageGrade >= arrayAverageGrades[(thershold*4) - 1])
+            else if (averageGrade >= averageGrades[(thershold*4) - 1])
             {
                 return 'D';
             }
