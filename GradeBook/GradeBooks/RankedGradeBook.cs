@@ -36,7 +36,7 @@ namespace GradeBook.GradeBooks
                         numb = arrayAverageGrades[j];
                         arrayAverageGrades[j] = arrayAverageGrades[j + 1];
                         arrayAverageGrades[j + 1] = numb;
-
+                         
                     }
                 }
             }
