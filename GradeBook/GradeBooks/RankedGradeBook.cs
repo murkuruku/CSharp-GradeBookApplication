@@ -23,7 +23,7 @@ namespace GradeBook.GradeBooks
             foreach (Student student in Students)
             { 
                 averageGrades.Add(student.AverageGrade);
-            }
+            } 
             double[] arrayAverageGrades = averageGrades.ToArray();
             double numb;
             for (int i = 0; i <= Students.Count; i++)
