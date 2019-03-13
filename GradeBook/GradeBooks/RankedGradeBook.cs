@@ -24,8 +24,8 @@ namespace GradeBook.GradeBooks
             { 
                 averageGrades.Add(student.AverageGrade);
             } 
-            double[] arrayAverageGrades = new double[Students.Count];
-            arrayAverageGrades = averageGrades.ToArray();
+            double[] arrayAverageGrades = averageGrades.ToArray();
+            
             double numb;
             for (int i = 0; i <= Students.Count; i++)
             {
