@@ -19,7 +19,7 @@ namespace GradeBook.GradeBooks
 
                 throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work.");
 
-            var thershold = (int)Math.Ceiling(Students.Count * 0.2);
+            int thershold = (int)Math.Ceiling(Students.Count * 0.2);
            // var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList.
             List<double> averageGrades = new List<double>();
             foreach (Student student in Students)
