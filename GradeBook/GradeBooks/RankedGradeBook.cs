@@ -34,7 +34,7 @@ namespace GradeBook.GradeBooks
                     if (arrayAverageGrades[j] < arrayAverageGrades[j + 1])
                     {
                         numb = arrayAverageGrades[j];
-                        arrayAverageGrades[j] = arrayAverageGrades[j + 1];
+                        arrayAverageGrades[j] = arrayAverageGrades[j + 1]; 
                         arrayAverageGrades[j + 1] = numb;
 
                     }
