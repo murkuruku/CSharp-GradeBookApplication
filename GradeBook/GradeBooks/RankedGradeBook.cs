@@ -24,7 +24,8 @@ namespace GradeBook.GradeBooks
             { 
                 averageGrades.Add(student.AverageGrade);
             } 
-            double[] arrayAverageGrades = averageGrades.ToArray();
+            double[] arrayAverageGrades = new double[Students.Count];
+            arrayAverageGrades = averageGrades.ToArray();
             double numb;
             for (int i = 0; i <= Students.Count; i++)
             {
@@ -43,15 +44,15 @@ namespace GradeBook.GradeBooks
             {
                 return 'A';
             }
-            else if (averageGrade >= arrayAverageGrades[(thershold * 2) - 1])
+            else if (averageGrade >= arrayAverageGrades[(thershold*2) - 1])
             {
                 return 'B';
             }
-            else if (averageGrade >= arrayAverageGrades[(thershold * 3) - 1])
+            else if (averageGrade >= arrayAverageGrades[(thershold*3) - 1])
             {
                 return 'C';
             }
-            else if (averageGrade >= arrayAverageGrades[(thershold * 4) - 1])
+            else if (averageGrade >= arrayAverageGrades[(thershold*4) - 1])
             {
                 return 'D';
             }
