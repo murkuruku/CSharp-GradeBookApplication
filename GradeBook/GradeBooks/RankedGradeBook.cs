@@ -38,7 +38,7 @@ namespace GradeBook.GradeBooks
                         arrayAverageGrades[j + 1] = numb;
 
                     }
-                }
+                } 
             }
             if (averageGrade >= arrayAverageGrades[thershold - 1])
             {
