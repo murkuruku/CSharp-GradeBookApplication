@@ -21,7 +21,7 @@ namespace GradeBook.GradeBooks
             var thershold = (int)Math.Ceiling(Students.Count * 0.2);
             List<double> averageGrades = new List<double>();
             foreach (Student student in Students)
-            {
+            { 
                 averageGrades.Add(student.AverageGrade);
             }
             double[] arrayAverageGrades = averageGrades.ToArray();
