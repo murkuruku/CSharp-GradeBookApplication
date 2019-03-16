@@ -125,7 +125,7 @@ namespace GradeBook.GradeBooks
                         return 1;
                 }
             }
-            else if (!IsWeighted)
+            else
             {
                 switch (letterGrade)
                 {
@@ -140,11 +140,11 @@ namespace GradeBook.GradeBooks
                     case 'F':
                         return 0;
                 }
+                  return 0;
             }
-            else
-            {
-            return 0;
-            }
+           
+           
+            
             
         }
 
