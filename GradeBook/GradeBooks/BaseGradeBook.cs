@@ -123,8 +123,11 @@ namespace GradeBook.GradeBooks
                         return 2;
                     case 'F':
                         return 1;
+
                 }
+                return 0;
             }
+
             else
             {
                 switch (letterGrade)
