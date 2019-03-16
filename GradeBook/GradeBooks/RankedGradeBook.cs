@@ -20,29 +20,8 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException("Ranked-grading requires a minimum of 5 students to work.");
 
             var thershold = (int)Math.Ceiling(Students.Count * 0.2);
-            var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
-
-            if(grades[thershold-1] <= averageGrade)
-            {
-                return 'A';
-            }
-            else if (grades[thershold*2 - 1] <= averageGrade)
-            {
-                return 'B'; 
-            }
-            else if (grades[thershold * 3 - 1] <= averageGrade)
-            {
-                return 'C';
-            }
-            else if (grades[thershold * 4 - 1] <= averageGrade)
-            {
-                return 'D';
-            }
-            else
-            {
-                return 'F';
-            }
-            /* List<double> averageGrades = new List<double>();
+           
+             List<double> averageGrades = new List<double>();
              foreach (Student student in Students)
              { 
                  averageGrades.Add(student.AverageGrade);
@@ -50,9 +29,9 @@ namespace GradeBook.GradeBooks
 
 
              double numb;
-             for (int i = 0; i <= Students.Count; i++)
+             for (int i = 0; i < Students.Count; i++)
              {
-                 for (int j = 0; j <= Students.Count - 1; j++)
+                 for (int j = 0; j < Students.Count - 1; j++)
                  {
                      if (averageGrades[j] < averageGrades[j + 1])
                      {
@@ -82,7 +61,7 @@ namespace GradeBook.GradeBooks
              else
              {
                  return 'F';
-             }*/
+             }
         }
         }
     }
